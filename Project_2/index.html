@@ -8,8 +8,8 @@
     <title>Seat Selector</title>
 </head>
 <body>
-    <div class="threater-container">
-            <!-- This is the Selet box for -->
+     <!-- This is the Selet box for what movie the user wants to watch-->
+    <div class="select-container">
     <label for="">Select your Movie</label>
     <select name="" id="Movie">
         <option value="30">Nut Job </option>
@@ -19,9 +19,29 @@
         <option value="30">Kung Fu Panda </option>
     </select>
     </div>
-<!--this is a legend displaying  -->    
-    <ul class="legend"></ul>
 
+<!--this is a legend displaying available, selected, and occupied seat formatting  -->    
+    <ul class="legend">
+        <!-- Available seats -->
+        <li>
+            <div class="seat"></div>
+            <small>Available</small>
+        </li>
+         <!-- Selected seats -->
+         <li>
+            <div class="seat selected"></div>
+            <small>Selected</small>
+        </li>
+         <!-- Occupied seats -->
+         <li>
+            <div class="seat occupied"></div>
+            <small>Occupied</small>
+        </li>
+    </ul>
+
+    <!-- The container for dispaying screen and seating chart -->
+    
+        
     <script src=script.js></script>
 </body>
-</html>
+</html> 
