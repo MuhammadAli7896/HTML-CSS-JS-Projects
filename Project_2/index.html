@@ -8,47 +8,47 @@
     <title>Seat Selector</title>
 </head>
 <body>
-     <!-- This is the Selet box for what movie the user wants to watch-->
+    <!-- This is the select box for what movie the user wants to watch -->
     <div class="select-container">
-    <label for="">Select your Movie</label>
-    <select name="" id="Movie">
-        <option value="30">Nut Job </option>
-        <option value="10">How to Train Your Dragon </option>
-        <option value="15">Big Hero 6</option>
-        <option value="20">Chicken Run</option>
-        <option value="30">Kung Fu Panda </option>
-    </select>
+        <label>Select your movie:</label>
+        <select id="movie">
+            <option value="20">Top Gun 2</option>
+            <option value="7">Jumanji</option>
+            <option value="10">Avengers</option>
+            <option value="10">Iron Man</option>
+            <option value="5">Braveheart</option>
+        </select>
     </div>
 
-<!--this is a legend displaying available, selected, and occupied seat formatting  -->    
+    <!-- This is the legend displaying available, selected, and occupied seat formatting -->
     <ul class="legend">
         <!-- Available seats -->
         <li>
             <div class="seat"></div>
             <small>Available</small>
         </li>
-         <!-- Selected seats -->
-         <li>
+        <!-- Selected seats -->
+        <li>
             <div class="seat selected"></div>
             <small>Selected</small>
         </li>
-         <!-- Occupied seats -->
-         <li>
+        <!-- Occupied seats -->
+        <li>
             <div class="seat occupied"></div>
             <small>Occupied</small>
         </li>
     </ul>
 
-    <!-- The container for dispaying screen and seating chart -->
+    <!-- The container for displaying screen and seating chart -->
     <div class="container">
         <div class="screen"></div>
         <!-- This is row 1 -->
         <div class="row">
-            <div class="seat selected"></div>
             <div class="seat"></div>
             <div class="seat"></div>
-            <div class="seat selected"></div>
-            <div class="seat selected"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
             <div class="seat"></div>
             <div class="seat"></div>
             <div class="seat"></div>
@@ -77,11 +77,11 @@
         </div>
         <!-- This is row 4 -->
         <div class="row">
+            <div class="seat"></div>
             <div class="seat occupied"></div>
             <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
+            <div class="seat occupied"></div>
+            <div class="seat occupied"></div>
             <div class="seat"></div>
             <div class="seat"></div>
             <div class="seat"></div>
@@ -90,29 +90,29 @@
         <div class="row">
             <div class="seat"></div>
             <div class="seat"></div>
-            <div class="seat occupied"></div>
             <div class="seat"></div>
             <div class="seat"></div>
-            <div class="seat occupied"></div>
-            <div class="seat occupied"></div>
-            <div class="seat occupied"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
         </div>
         <!-- This is row 6 -->
         <div class="row">
             <div class="seat"></div>
-            <div class="seat occupied"></div>
             <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat occupied"></div>
             <div class="seat selected"></div>
             <div class="seat selected"></div>
-            <div class="seat"></div>
+            <div class="seat selected"></div>
+            <div class="seat selected"></div>
+            <div class="seat occupied"></div>
+            <div class="seat occupied"></div>
         </div>
     </div>
 
-    <!-- Totals Seats and Price -->
-    <p class="totals">You have selected <span id="count">0</span> Seats. Your total is $<span id="total">0</span></p>
-        
-    <script src=script.js></script>
+    <!-- Totals: Seats & Price -->
+    <p class="totals">You've selected <span id="count">0</span> seats. Your total is $<span id="total">0</span></p>
+    
+    <script src="script.js"></script>
 </body>
-</html> 
+</html>

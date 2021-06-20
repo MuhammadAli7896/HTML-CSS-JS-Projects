@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Open+Sans&display=swap');
 
-*{
-   box-sizing: border-box;
+* {
+    box-sizing: border-box;
 }
 
 body {
-    background-color: #222e50;
+    background-color: #222E50;
     color: white;
     display: flex;
     flex-direction: column;
@@ -26,11 +26,11 @@ body {
     border-radius: 5px;
     font-size: 18px;
     margin-left: 10px;
-    padding-top: 5px 15px 5px 15px;
+    padding: 5px 15px 5px 15px;
 }
 
 .seat {
-    background-color: #bcd8c1;
+    background-color: #BCD8C1;
     height: 15px;
     width: 15px;
     margin: 5px;
@@ -39,11 +39,11 @@ body {
 }
 
 .seat.selected {
-    background-color: yellow;
+    background-color: #E9D985;
 }
 
 .seat.occupied {
-    background-color: #439a86;
+    background-color: #007991;
 }
 
 .seat:nth-of-type(2) {
@@ -93,7 +93,7 @@ body {
     box-shadow: 0 3px 10px rgba(255, 255, 255, 0.5);
 }
 
-.conatainer {
+.container {
     perspective: 1000px;
 }
 
@@ -101,6 +101,6 @@ body {
     display: flex;
 }
 
-p.totals {
+p.totals span {
     color: #E9D985;
 }
