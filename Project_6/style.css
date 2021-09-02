@@ -51,20 +51,20 @@ nav ul {
 }
 
 nav ul li {
-    border-bottom: 2px solid rgba(200,200,200,0.1);
+    border-bottom: 2px solid rgba(221, 219, 219, 0.1);
     padding: 20px;
 }
 
 nav ul li:first-of-type {
-    border-top: 2px solid rgba(200,200,200,0.1);
+    border-top: 2px solid rgba(228, 226, 226, 0.1);
 }
 
-nav ul lo a {
+nav ul li a {
     color: white;
     text-decoration: none;
 }
 
-nav ul lo a:hover {
+nav ul li a:hover {
     text-decoration: underline;
 }
 
