@@ -1,0 +1,11 @@
+body {
+    background-color: #113537;
+    color: white;
+}
+
+.hangman-container {
+    fill: transparent;
+    stroke: white;
+    stroke-width: 5px;
+    stroke-linecap: round;
+}
