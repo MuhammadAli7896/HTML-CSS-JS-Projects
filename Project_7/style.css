@@ -9,3 +9,7 @@ body {
     stroke-width: 5px;
     stroke-linecap: round;
 }
+
+.hangman-part {
+    display: none;
+}

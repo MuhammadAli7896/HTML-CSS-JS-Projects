@@ -25,14 +25,39 @@
             <!-- Hangman Head -->
             <circle cx="140" cy="70" r="20" class="hangman-part"/>
             <!-- Hangman Core -->
-            <line x1="140" y1="90" x2="140" y2="150" class="hangman-part" />
+            <line x1="140" y1="90" x2="140" y2="150" class="hangman-part"/>
             <!-- Hangman Arms-->
-            <line x1="140" y1="100" x2="120" y2="130" class="hangman-part" />
-            <line x1="140" y1="100" x2="160" y2="130" class="hangman-part" />
+            <line x1="140" y1="100" x2="120" y2="130" class="hangman-part"/>
+            <line x1="140" y1="100" x2="160" y2="130" class="hangman-part"/>
             <!-- Hangman Legs -->
-            <line x1="140" y1="150" x2="120" y2="190" class="hangman-part" />
-            <line x1="140" y1="150" x2="160" y2="190" class="hangman-part" />
+            <line x1="140" y1="150" x2="120" y2="190" class="hangman-part"/>
+            <line x1="140" y1="150" x2="160" y2="190" class="hangman-part"/>
         </svg>
+        <!-- Container for Incorrect Guesses -->
+        <div class="incorrect-guesses-container">
+            <!-- Use JS to add incorrect leeters here -->
+            <div id="incorrect-letters">
+                <p>Incorrect Guesses</p>
+                <span>a,b,c,d</span>
+            </div>
+        </div>
+        <!-- This is the main word the player wants to guess -->
+        <div class="word" id="word">
+            <div class="letter">a</div>
+            <div class="letter">d</div>
+            <div class="letter">i</div>
+            <div class="letter">l</div>
+        </div>
+    </div>
+
+    <!-- Game Over Container -->
+    <div class="gameover-container" id="gameover-container">
+        <div class="popup">
+            <!-- message to display when game is finished -->
+            <h2 id="gameover-message">Congrats! You Won!</h2>
+            <!-- button to restart the game -->
+            <button id="play-btn">Play Again</button>
+        </div>
     </div>
 
 
