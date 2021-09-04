@@ -15,7 +15,7 @@ const words = [
 ];
 
 // Select a word from the list at random
-let randomWord = words[Math.random() * words.length];
+let randomWord = words[Math.floor(Math.random() * words.length)];
 
 // Array to hold the letters from correct guesses
 const correctLetters = ['a','e','i','o','u'];
@@ -24,13 +24,24 @@ const incorrectLetters = [];
 
 // Function to render the random word in the UI
 function renderWord() {
+    // Split the random word into individual letters as an array, map over the array
+    // For each letter, create a sapn element and only display the letter if it's present
+    // in the correct letters
     wordElement.innerHTML = `
         ${randomWord.split('').map( letter => `
            <span class="letter">
-               ${correctLetters.includes(letter) ? letter : ''}
+               ${ correctLetters.includes(letter) ? letter : '' }
            </span>
-        `)}
+        `).join('')}
     `;
+    console.log(wordElement.innerText);
+    // Remove the new line characters from the word
+    const word = wordElement.innerText.replace(/\n/g, '');
+    console.log(word);
+    // Check to see if the word matches the random word
+    if ( word === randomWord) {
+        // 
+    } 
 };
 
 renderWord();
