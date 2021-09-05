@@ -18,7 +18,7 @@ const words = [
 let randomWord = words[Math.floor(Math.random() * words.length)];
 
 // Array to hold the letters from correct guesses
-const correctLetters = ['a','e','i','o','u'];
+// const correctLetters = ['a','e','i','o','u','b','c','d','f','g','h','i','j','k','l','m','n','p','q','r','s','t','v','w','x','y','z'];
 // Array to hold the letters from incorrect guesses
 const incorrectLetters = [];
 
@@ -29,9 +29,9 @@ function renderWord() {
     // in the correct letters
     wordElement.innerHTML = `
         ${randomWord.split('').map( letter => `
-           <span class="letter">
-               ${ correctLetters.includes(letter) ? letter : '' }
-           </span>
+            <span class="letter">
+                ${ correctLetters.includes(letter) ? letter : '' }
+            </span>
         `).join('')}
     `;
     console.log(wordElement.innerText);
@@ -40,8 +40,63 @@ function renderWord() {
     console.log(word);
     // Check to see if the word matches the random word
     if ( word === randomWord) {
-        // 
+        // Set the game over message for congratulations
+        gameoverMessage.innerText = 'You won!'
+        // Display the gameover container
+        gameoverElement.style.display = 'flex';
     } 
 };
+
+// Function to display the notification container
+function displayNotification () {
+    // Display the notification in the window
+    notificationElement.classList.add('show');
+    // Remove the notification after 1 second
+    setTimeout( () => {
+        notificationElement.classList.remove('show');
+    }, 1000 );
+};
+
+// Function to update UI based on incorrect letter guess
+function renderIncorrectLetters() {
+    incorrectLettersElement.innerHTML = `
+        <p>Incorrect Letters</p>
+        ${incorrectLetters.map(letter => `<span>${letter}</span>`)}
+    `
+};
+
+// Event Listeners
+// listen for keyboard keydown event
+window.addEventListener('keydown', e => {
+    // Check if the keyboard key pressed is a letter
+    if ( e.keyCode >= 65 && e.keyCode <= 90 ) {
+        // if the keyCode is between 65 and 90, save the letter
+        const letter = e.key;
+        // Check to see if the letter is in the randomWord
+        if ( randomWord.includes(letter) ) {
+            // If the randomWord has the letter, check to see if letter is already in correctLetters array
+            if ( !correctLetters.includes(letter) ) {
+                // If the letter is not already in the correctLetters array, add it there
+                correctLetters.push(letter);
+                // Render the word in the UI again
+                renderWord();
+            } else {
+                // If the letter is already in the correctLetters array, show the notification
+                displayNotification();
+            }
+        } else {
+            // If the randomWord does not have the letter, check to see if letter is already in the incorrectLetters array
+            if ( !incorrectLetters.includes(letter) ) {
+                // If the letter is not already in the incorrectLetters array, add it there
+                incorrectLetters.push(letter);
+                // Render the incorrect letters section
+                renderIncorrectLetters();
+            } else {
+                // If the letter is already in the incorrectLetters array, show the notification
+                displayNotification();
+            }
+        }
+    }
+})
 
 renderWord();
