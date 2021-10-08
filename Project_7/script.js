@@ -1,10 +1,10 @@
 // Get DOM Elements
 const wordElement = document.getElementById('word');
-const incorrectLettersElements = document.getElementById('incorrect-letters');
+const incorrectLettersElement = document.getElementById('incorrect-letters');
 const notificationElement = document.getElementById('notification-container');
 const gameoverElement = document.getElementById('gameover-container');
 const gameoverMessage = document.getElementById('gameover-message');
-const playBtn = document.getElementById('play-Btn');
+const playBtn = document.getElementById('play-btn');
 
 // Get DOM Elements for Hangman Parts
 const hangmanParts = document.querySelectorAll('.hangman-part');
@@ -19,14 +19,15 @@ let randomWord = words[Math.floor(Math.random() * words.length)];
 
 // Array to hold the letters from correct guesses
 // const correctLetters = ['a','e','i','o','u','b','c','d','f','g','h','i','j','k','l','m','n','p','q','r','s','t','v','w','x','y','z'];
+const correctLetters = [];
 // Array to hold the letters from incorrect guesses
 const incorrectLetters = [];
 
 // Function to render the random word in the UI
 function renderWord() {
-    // Split the random word into individual letters as an array, map over the array
-    // For each letter, create a sapn element and only display the letter if it's present
-    // in the correct letters
+    // split the random word into individual letters as an array, map over the array,
+    // for each letter, create a span element and only display the letter if it's present
+    // in the correctLetters array
     wordElement.innerHTML = `
         ${randomWord.split('').map( letter => `
             <span class="letter">
@@ -38,17 +39,17 @@ function renderWord() {
     // Remove the new line characters from the word
     const word = wordElement.innerText.replace(/\n/g, '');
     console.log(word);
-    // Check to see if the word matches the random word
-    if ( word === randomWord) {
-        // Set the game over message for congratulations
-        gameoverMessage.innerText = 'You won!'
+    // Check to see if the word (only the correct letters) matches the randomWord
+    if ( word === randomWord ) {
+        // If the word matches the random word, set the gameover message to congratulate player for win
+        gameoverMessage.innerText = 'You won!';
         // Display the gameover container
         gameoverElement.style.display = 'flex';
-    } 
+    }
 };
 
 // Function to display the notification container
-function displayNotification () {
+function displayNotification() {
     // Display the notification in the window
     notificationElement.classList.add('show');
     // Remove the notification after 1 second
@@ -59,14 +60,35 @@ function displayNotification () {
 
 // Function to update UI based on incorrect letter guess
 function renderIncorrectLetters() {
+    // Display the incorrect letters section and show each letter from the incorrectLetters array
     incorrectLettersElement.innerHTML = `
         <p>Incorrect Letters</p>
-        ${incorrectLetters.map(letter => `<span>${letter}</span>`)}
-    `
+        ${incorrectLetters.map( letter => `<span>${letter}</span>` )}
+    `;
+    // Display the hangman part for everytime user inputs an incorrect letter
+    hangmanParts.forEach( (part, index) => {
+        // Determine the number of incorrect guesses by counting number of incorrect letters
+        const numIncorrect = incorrectLetters.length;
+        // Check if the index value of the hangman part is less than the number of incorrect letters
+        if ( index < numIncorrect ) {
+            // If true, then display this part
+            part.style.display = 'block';
+        } else {
+            // if false, then don't display
+            part.style.display = 'none';
+        }
+    });
+    // Check if the game is over
+    if ( incorrectLetters.length === hangmanParts.length ) {
+        // If true, set the gameover message
+        gameoverMessage.innerText = 'You lost!';
+        // Display the gameover container
+        gameoverElement.style.display = 'flex';
+    }
 };
 
 // Event Listeners
-// listen for keyboard keydown event
+// Listen for keyboard keydown event
 window.addEventListener('keydown', e => {
     // Check if the keyboard key pressed is a letter
     if ( e.keyCode >= 65 && e.keyCode <= 90 ) {
@@ -97,6 +119,21 @@ window.addEventListener('keydown', e => {
             }
         }
     }
+})
+
+// Listen for a click on the playBtn
+playBtn.addEventListener('click', () => {
+    // Empty the incorrect and correct letter arrays
+    correctLetters.splice(0);
+    incorrectLetters.splice(0);
+    // Generate a new randomWord
+    randomWord = words[Math.floor(Math.random() * words.length)];
+    // Render the new randomWord
+    renderWord();
+    // Update the Incorrect Letters section
+    renderIncorrectLetters();
+    // Hide the gameover container
+    gameoverElement.style.display = 'none';
 })
 
 renderWord();
