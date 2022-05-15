@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: #B5BAD0;
+    background-color: #defac3;
     font-family: 'Open Sans', sans-serif;
     display: flex;
     flex-direction: column;
@@ -22,7 +22,7 @@ p {
 
 .btn {
     color: black;
-    background-color: #81D2C7;
+    background-color: #56c256;
     padding: 10px 20px;
     border: 0;
     width: 100px;
