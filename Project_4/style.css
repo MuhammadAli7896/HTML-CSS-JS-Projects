@@ -27,7 +27,7 @@ p {
     border: 0;
     width: 100px;
     cursor: pointer;
-    
+    border: 1px solid black;
 }
 
 .currency {
