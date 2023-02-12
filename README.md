@@ -8,7 +8,7 @@ In this some projects regarding API linkage and random generation or calculation
 
 This Module gave a wide knowledge of HTML and its deployment and working where as styling of a webpage really attracts me towards web-designing.
 
-For many other work however JavaScript played important role, the knowledge of backend and frontend and its libararies and frameworks give me know how of current development in web-designing field.
+For many other work however JavaScript played important role, the knowledge of backend and frontend and its libararies and frameworks give me know how of current progress and advancement in web-development field.
 
 
 
