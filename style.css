@@ -71,6 +71,7 @@ nav ul li a { /* nav links */
 
 nav ul li a:hover { 
     text-decoration: underline; 
+    color: rgb(207, 207, 207);
 }
 
 nav ul li a:visited {
