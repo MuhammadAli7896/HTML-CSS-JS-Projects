@@ -1,4 +1,4 @@
-# Ali-Axiom-Module-A
+# HTML-CSS-JS-Projects
 
 Online Course started in June 2021 which covers all prospects of web-development such as Frontend, Backend and MERN stack.
 
