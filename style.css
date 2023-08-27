@@ -156,6 +156,11 @@ button:focus {
     font-style: italic;
 }
 
+@media (max-width: 768px) {
+    .notice {
+        font-size: 1.4em;
+    }
+}
 /* .modal-container {
     background-color: rgba(0,0,0,0.6);
     position: fixed;
